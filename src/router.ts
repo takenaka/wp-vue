@@ -13,7 +13,7 @@ const router = new Router({
       component: () => import('./components/page/Home.vue')
     },
     {
-      path: '/post',
+      path: '/post/:id',
       component: () => import('./components/page/Post.vue')
     }
   ],

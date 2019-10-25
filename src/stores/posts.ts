@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import wp from '~/models/wpapi';
-import { WPPost } from '~/models/post';
+import { IWPPost } from '~/models/post';
 
-export class PostStore {
-  private _posts: WPPost[] = [];
+export class PostsStore {
+  private _posts: IWPPost[] = [];
 
   public get posts() {
     return this._posts;
   }
 
-  public async getPosts() {
+  public async getPosts(perPage: number) {
     try {
-      this._posts = await wp.posts();
+      this._posts = await wp.posts().perPage(perPage);
       return true;
     } catch (e) {
       return false;
@@ -19,4 +19,4 @@ export class PostStore {
   }
 }
 
-export default Vue.observable(new PostStore());
+export default Vue.observable(new PostsStore());

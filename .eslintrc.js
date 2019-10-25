@@ -12,6 +12,8 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    'vue/no-v-html': 'off',
     'prettier/prettier': [
       'error',
       {

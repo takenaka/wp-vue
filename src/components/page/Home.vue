@@ -1,15 +1,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import PostStore from '~/stores/posts';
+import PostsStore from '~/stores/posts';
 
 @Component
 export default class extends Vue {
-  private PostStore = PostStore;
+  private PostsStore = PostsStore;
 
   private async created() {
-    await this.PostStore.getPosts();
-
-    console.log(this.PostStore.posts);
+    await this.PostsStore.getPosts(5);
   }
 }
 </script>
@@ -19,8 +17,10 @@ export default class extends Vue {
     <h2>WP-Vue</h2>
 
     <ul>
-      <li v-for="post of PostStore.posts" :key="post.id">
-        <router-link to="/post/">{{ post.title.rendered }}</router-link>
+      <li v-for="post of PostsStore.posts" :key="post.id">
+        <router-link :to="`/post/${post.id}`">{{
+          post.title.rendered
+        }}</router-link>
       </li>
     </ul>
   </div>
