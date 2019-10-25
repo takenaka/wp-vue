@@ -10,3 +10,7 @@ Starter theme for using Vue with WordPress theme
 
 ## Build
 `npm run build`
+
+## Attention
+
+This theme assumes [local by flywheel](https://localbyflywheel.com/) as the development environment
