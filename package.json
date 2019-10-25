@@ -4,7 +4,7 @@
   "description": "Wordpress Theme on parcel bundler",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/app.ts --hmr-hostname localhost --no-source-maps --no-cache",
+    "dev": "parcel watch src/app.ts --hmr-hostname localhost --no-source-maps --no-cache",
     "build": "npm run rmrf && parcel build src/app.ts --no-source-maps",
     "lint": "eslint --fix ./src/**/*.{ts,vue}",
     "rmrf": "rm -rf ./dist"
