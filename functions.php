@@ -12,7 +12,7 @@ add_action('init', function () {
 // Load scripts
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script(
-        'WP-Vue-js',
+        'wp-vue-js',
         get_stylesheet_directory_uri().'/dist/app.js',
         array('jquery'),
         filemtime(get_stylesheet_directory().'/dist/app.js'),
@@ -20,7 +20,7 @@ add_action('wp_enqueue_scripts', function () {
     );
 
     wp_enqueue_style(
-        'WP-Vue-css',
+        'wp-vue-css',
         get_stylesheet_directory_uri().'/dist/app.css',
         null,
         filemtime(get_stylesheet_directory().'/dist/app.css')
