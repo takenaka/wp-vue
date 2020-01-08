@@ -14,7 +14,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script(
         'wp-vue-js',
         get_stylesheet_directory_uri().'/dist/app.js',
-        array('jquery'),
+        ['jquery'],
         filemtime(get_stylesheet_directory().'/dist/app.js'),
         true
     );
